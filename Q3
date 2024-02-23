@@ -1,0 +1,22 @@
+function expect(val) {
+    return {
+        toBe: function (v) {
+            if (val === v) {
+                return true;
+            } else {
+                throw new Error("Not Equal")
+            }
+        },
+        notToBe: function (v) {
+            if (val !== v) {
+                return true;
+            } else {
+                throw new Error("Equal")
+            }
+        }
+
+    }
+}
+
+console.log(expect(5).toBe(5));
+console.log(expect(5).notToBe(6));
