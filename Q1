@@ -1,0 +1,7 @@
+function createHelloWorld() {
+    return function () {
+        return "Hello World";
+    }
+}
+let print = createHelloWorld();
+console.log(print());
